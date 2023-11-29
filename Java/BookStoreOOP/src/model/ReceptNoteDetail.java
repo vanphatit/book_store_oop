@@ -4,13 +4,13 @@ public class ReceptNoteDetail {
     private int unitPrice;
     private int quantity;
     private ReceptNote receptNote;
-    private Object object;
+    private Book book;
 
-    public ReceptNoteDetail(int unitPrice, int quantity, ReceptNote receptNote, Object object) {
+    public ReceptNoteDetail(int unitPrice, int quantity, ReceptNote receptNote, Book book) {
         this.unitPrice = unitPrice;
         this.quantity = quantity;
         this.receptNote = receptNote;
-        this.object = object;
+        this.book = book;
     }
 
     public int getUnitPrice() {
@@ -37,11 +37,11 @@ public class ReceptNoteDetail {
         this.receptNote = receptNote;
     }
 
-    public Object getObject() {
-        return object;
+    public Book getbook() {
+        return book;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setbook(Book book) {
+        this.book = book;
     }
 }

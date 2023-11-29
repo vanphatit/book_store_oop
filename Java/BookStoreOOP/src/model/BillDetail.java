@@ -3,12 +3,12 @@ package model;
 public class BillDetail {
     private int quantity;
     private Bill bill;
-    private Object object;
+    private Book book;
 
-    public BillDetail(String id, int quantity, Bill bill, Object object) {
+    public BillDetail(String id, int quantity, Bill bill, Book book) {
         this.quantity = quantity;
         this.bill = bill;
-        this.object = object;
+        this.book = book;
     }
 
     public int getQuantity() {
@@ -19,8 +19,8 @@ public class BillDetail {
         return bill;
     }
 
-    public Object getObject() {
-        return object;
+    public Book getBook() {
+        return book;
     }
 
     public void setQuantity(int quantity) {
@@ -31,7 +31,7 @@ public class BillDetail {
         this.bill = bill;
     }
 
-    public void setObject(Object object) {
-        this.object = object;
+    public void setBook(Book book) {
+        this.book = book;
     }
 }
