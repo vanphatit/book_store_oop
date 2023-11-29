@@ -5,7 +5,7 @@ public class BillDetail {
     private Bill bill;
     private Book book;
 
-    public BillDetail(String id, int quantity, Bill bill, Book book) {
+    public BillDetail(int quantity, Bill bill, Book book) {
         this.quantity = quantity;
         this.bill = bill;
         this.book = book;

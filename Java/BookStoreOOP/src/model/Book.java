@@ -48,11 +48,9 @@ public class Book {
     public void setauthor(String author) {
         this.author = author;
     }
-
     public void setUnitPrice(int unitPrice) {
         this.unitPrice = unitPrice;
     }
-
     public void setCategory(BookCategory category) {
         this.category = category;
     }

@@ -2,14 +2,14 @@ package model;
 
 import java.util.Date;
 
-public class ReceptNote {
+public class ReceiptNote {
     private String id;
     private Date date;
     private String moreInfo;
     private Suplier suplier;
     private Staff staff;
 
-    public ReceptNote(String id, Date date, String moreInfo, Suplier suplier, Staff staff) {
+    public ReceiptNote(String id, Date date, String moreInfo, Suplier suplier, Staff staff) {
         this.id = id;
         this.date = date;
         this.moreInfo = moreInfo;

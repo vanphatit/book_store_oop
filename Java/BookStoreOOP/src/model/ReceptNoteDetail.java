@@ -3,13 +3,13 @@ package model;
 public class ReceptNoteDetail {
     private int unitPrice;
     private int quantity;
-    private ReceptNote receptNote;
+    private ReceiptNote receiptNote;
     private Book book;
 
-    public ReceptNoteDetail(int unitPrice, int quantity, ReceptNote receptNote, Book book) {
+    public ReceptNoteDetail(int unitPrice, int quantity, ReceiptNote receiptNote, Book book) {
         this.unitPrice = unitPrice;
         this.quantity = quantity;
-        this.receptNote = receptNote;
+        this.receiptNote = receiptNote;
         this.book = book;
     }
 
@@ -29,12 +29,12 @@ public class ReceptNoteDetail {
         this.quantity = quantity;
     }
 
-    public ReceptNote getReceptNote() {
-        return receptNote;
+    public ReceiptNote getReceiptNote() {
+        return receiptNote;
     }
 
-    public void setReceptNote(ReceptNote receptNote) {
-        this.receptNote = receptNote;
+    public void setReceiptNote(ReceiptNote receiptNote) {
+        this.receiptNote = receiptNote;
     }
 
     public Book getbook() {
