@@ -12,7 +12,7 @@ public class Main {
     private static ArrayList<Bill> bills;
     private static ArrayList<BillDetail> billDetails;
     private static ArrayList<ReceiptNote> receiptNotes;
-    private static ArrayList<ReceptNoteDetail> receiptNoteDetails;
+    private static ArrayList<ReceiptNoteDetail> receiptNoteDetails;
     private static ArrayList<Staff> staffs;
     private static ArrayList<Suplier> supliers;
     private static ArrayList<Reader> readers;
@@ -23,7 +23,7 @@ public class Main {
         bills = new ArrayList<Bill>();
         billDetails = new ArrayList<BillDetail>();
         receiptNotes = new ArrayList<ReceiptNote>();
-        receiptNoteDetails = new ArrayList<ReceptNoteDetail>();
+        receiptNoteDetails = new ArrayList<ReceiptNoteDetail>();
         staffs = new ArrayList<Staff>();
         bookCategories = new ArrayList<BookCategory>();
         supliers = new ArrayList<Suplier>();
@@ -117,12 +117,12 @@ public class Main {
 
             int total = 0;
             for (ReceiptNote receiptNote : listReceiptNote) {
-                ArrayList<ReceptNoteDetail> listReceptNoteDetail = (ArrayList<ReceptNoteDetail>) receiptNoteDetails.stream()
-                        .filter(receptNoteDetail -> receptNoteDetail.getReceiptNote().equals(receiptNote))
+                ArrayList<ReceiptNoteDetail> listReceiptNoteDetail = (ArrayList<ReceiptNoteDetail>) receiptNoteDetails.stream()
+                        .filter(receiptNoteDetail -> receiptNoteDetail.getReceiptNote().equals(receiptNote))
                         .collect(Collectors.toList());
 
-                for (ReceptNoteDetail receptNoteDetail : listReceptNoteDetail) {
-                    total += receptNoteDetail.getUnitPrice() * receptNoteDetail.getQuantity();
+                for (ReceiptNoteDetail receiptNoteDetail : listReceiptNoteDetail) {
+                    total += receiptNoteDetail.getUnitPrice() * receiptNoteDetail.getQuantity();
                 }
             }
 
@@ -142,12 +142,12 @@ public class Main {
                 total += billDetail.getQuantity();
             }
 
-            ArrayList<ReceptNoteDetail> listReceptNoteDetail = (ArrayList<ReceptNoteDetail>) receiptNoteDetails.stream()
-                    .filter(receptNoteDetail -> receptNoteDetail.getbook().equals(book))
+            ArrayList<ReceiptNoteDetail> listReceiptNoteDetail = (ArrayList<ReceiptNoteDetail>) receiptNoteDetails.stream()
+                    .filter(receiptNoteDetail -> receiptNoteDetail.getbook().equals(book))
                     .collect(Collectors.toList());
 
-            for (ReceptNoteDetail receptNoteDetail : listReceptNoteDetail) {
-                total = receptNoteDetail.getQuantity() - total;
+            for (ReceiptNoteDetail receiptNoteDetail : listReceiptNoteDetail) {
+                total = receiptNoteDetail.getQuantity() - total;
             }
 
             if (total > 0) {
@@ -376,23 +376,23 @@ public class Main {
         receiptNotes.add(new ReceiptNote("RN005", new Date(2022, Calendar.JANUARY, 5), "Hoàn thành",
                 supliers.get(1), staffs.get(1)));
 
-        receiptNoteDetails.add(new ReceptNoteDetail(12000, 20, receiptNotes.get(0), books.get(0)));
-        receiptNoteDetails.add(new ReceptNoteDetail(350000, 20, receiptNotes.get(0), books.get(1)));
-        receiptNoteDetails.add(new ReceptNoteDetail(250000, 20, receiptNotes.get(0), books.get(2)));
-        receiptNoteDetails.add(new ReceptNoteDetail(1500000, 20, receiptNotes.get(1), books.get(3)));
-        receiptNoteDetails.add(new ReceptNoteDetail(2000000, 20, receiptNotes.get(1), books.get(4)));
-        receiptNoteDetails.add(new ReceptNoteDetail(2500000, 20, receiptNotes.get(1), books.get(5)));
-        receiptNoteDetails.add(new ReceptNoteDetail(3000000, 20, receiptNotes.get(2), books.get(6)));
-        receiptNoteDetails.add(new ReceptNoteDetail(3500000, 20, receiptNotes.get(2), books.get(7)));
-        receiptNoteDetails.add(new ReceptNoteDetail(20000, 20, receiptNotes.get(3), books.get(8)));
-        receiptNoteDetails.add(new ReceptNoteDetail(20000, 20, receiptNotes.get(3), books.get(9)));
-        receiptNoteDetails.add(new ReceptNoteDetail(20000, 20, receiptNotes.get(4), books.get(10)));
-        receiptNoteDetails.add(new ReceptNoteDetail(50000, 20, receiptNotes.get(4), books.get(11)));
-        receiptNoteDetails.add(new ReceptNoteDetail(55000, 20, receiptNotes.get(4), books.get(12)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(12000, 20, receiptNotes.get(0), books.get(0)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(350000, 20, receiptNotes.get(0), books.get(1)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(250000, 20, receiptNotes.get(0), books.get(2)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(1500000, 20, receiptNotes.get(1), books.get(3)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(2000000, 20, receiptNotes.get(1), books.get(4)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(2500000, 20, receiptNotes.get(1), books.get(5)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(3000000, 20, receiptNotes.get(2), books.get(6)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(3500000, 20, receiptNotes.get(2), books.get(7)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(20000, 20, receiptNotes.get(3), books.get(8)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(20000, 20, receiptNotes.get(3), books.get(9)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(20000, 20, receiptNotes.get(4), books.get(10)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(50000, 20, receiptNotes.get(4), books.get(11)));
+        receiptNoteDetails.add(new ReceiptNoteDetail(55000, 20, receiptNotes.get(4), books.get(12)));
 
         //foreach receptNoteDetails in receiptNoteDetails, unitprice = price - 10%
-        for (ReceptNoteDetail receptNoteDetail : receiptNoteDetails) {
-            receptNoteDetail.setUnitPrice((int) (receptNoteDetail.getUnitPrice() * 0.8));
+        for (ReceiptNoteDetail receiptNoteDetail : receiptNoteDetails) {
+            receiptNoteDetail.setUnitPrice((int) (receiptNoteDetail.getUnitPrice() * 0.8));
         }
     }
 }
